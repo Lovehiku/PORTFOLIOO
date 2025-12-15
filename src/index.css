@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional global tweaks */
+:root {
+  color-scheme: light dark;
+}
+html {
+  scroll-behavior: smooth;
+}
+@layer base {
+  html, body {
+    @apply font-sans;
+  }
+  h1, h2, h3 {
+    font-family: "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, p, label {
+    @apply text-center;
+  }
+  .dark p {
+    @apply text-gray-300;
+  }
+}
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-5 py-2 transition;
+  }
+  .btn-primary {
+    @apply btn bg-brand-primary text-white hover:opacity-90 shadow-soft;
+  }
+  .btn-outline {
+    @apply btn border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900;
+  }
+  .card {
+    @apply border rounded-xl bg-white dark:bg-gray-950 shadow-soft;
+  }
+  .badge {
+    @apply text-xs px-2 py-1 rounded bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2px;
+  }
+}

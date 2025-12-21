@@ -30,7 +30,7 @@ export default function App() {
         </p>
         <div className="flex items-center justify-center gap-4 pt-2">
           <a
-            href=""
+            href="#contact"
             className="btn-green"
             onClick={(e) => {
               e.preventDefault();
@@ -55,34 +55,39 @@ export default function App() {
   </div>
 </Section>
 
-          <Section id="about" title="About Me">
-  <div className="relative rounded-2xl overflow-hidden">
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,#065f46_0%,#064e3b_50%,#052e25_100%)]" />
-      <div className="relative p-6 sm:p-8">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-soft ring-1 ring-gray-200 dark:ring-gray-800 p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        <div className="relative">
-          <img
-            src="https://images.unsplash.com/photo-1531498860502-7c5980f032d0?q=60&w=1200&auto=format&fit=crop"
-            alt="Profile"
-            className="h-48 sm:h-56 lg:h-full w-full object-cover rounded-xl"
-          />
-          <div className="absolute -top-2 left-6 w-6 h-16 border-2 border-gray-300 rounded-md bg-gray-100"></div>
-        </div>
-        <div className="space-y-5">
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            I’m a Software Engineering student with a strong focus on backend systems
-            and scalable architecture. I care deeply about writing clear code,
-            designing predictable systems, and delivering thoughtful user experiences.
+         <Section id="about" title="About Me">
+  <div className="bg-gray-900 rounded-2xl overflow-hidden">
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+      
+      {/* Left: Tech Image */}
+      <div className="h-72 lg:h-auto">
+        <img
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=60&w=1200&auto=format&fit=crop"
+          alt="Tech workspace"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Right: Content (UNCHANGED TEXT) */}
+      <div className="p-8 lg:p-12 text-gray-200 space-y-6">
+        <p className="text-lg leading-relaxed">
+          I’m a Software Engineering student with a strong focus on backend systems
+          and scalable architecture. I care deeply about writing clear code,
+          designing predictable systems, and delivering thoughtful user experiences.
+        </p>
+
+        <div className="border-l-4 border-brand-primary pl-4">
+          <div className="font-semibold text-white">Focus Areas</div>
+          <p className="text-gray-400">
+            Backend APIs, System Design, Concurrency
           </p>
-          <div className="border-l-2 border-gray-200 dark:border-gray-800 pl-5 text-center mx-auto">
-            <div className="font-semibold">Focus Areas</div>
-            <p className="text-gray-600 dark:text-gray-400">Backend APIs, System Design, Concurrency</p>
-          </div>
         </div>
       </div>
+
     </div>
   </div>
 </Section>
+
 
 
         

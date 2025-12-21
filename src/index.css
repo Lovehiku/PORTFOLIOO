@@ -15,12 +15,13 @@ html {
   }
   h1, h2, h3 {
     font-family: "Poppins", "Inter", system-ui, -apple-system, sans-serif;
+    @apply text-gray-900 dark:text-gray-100;
   }
   h1, h2, h3, p, label {
     @apply text-center;
   }
-  .dark p {
-    @apply text-gray-300;
+  p, label {
+    @apply text-gray-700 dark:text-gray-300;
   }
 }
 @layer components {
@@ -33,11 +34,14 @@ html {
   .btn-outline {
     @apply btn border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-900;
   }
+  .btn-green {
+    @apply btn bg-brand-primary text-white hover:opacity-90 shadow-soft;
+  }
   .card {
     @apply border rounded-xl bg-white dark:bg-gray-950 shadow-soft;
   }
   .badge {
-    @apply text-xs px-2 py-1 rounded bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300;
+    @apply text-xs px-2 py-1 rounded bg-brand-primary/10 text-brand-primary dark:bg-brand-primary/20 dark:text-brand-primary;
   }
   .section-title {
     @apply text-3xl md:text-4xl font-bold tracking-tight;
@@ -48,7 +52,7 @@ html {
     display: block;
     width: 64px;
     height: 3px;
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    background: linear-gradient(90deg, #34d399, #34d399);
     margin-top: 8px;
     margin-left: auto;
     margin-right: auto;

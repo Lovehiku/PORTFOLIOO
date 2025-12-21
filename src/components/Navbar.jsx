@@ -67,8 +67,8 @@ export default function Navbar() {
                   href={l.href}
                   className={`px-3 py-2 rounded-md text-sm transition ${
                     active === l.href.replace("#", "")
-                      ? "text-blue-600 font-medium"
-                      : "text-gray-600 dark:text-gray-400 hover:text-blue-600"
+                      ? "text-brand-primary font-medium"
+                      : "text-gray-600 dark:text-gray-400 hover:text-brand-primary"
                   }`}
                 >
                   {l.label}
@@ -88,7 +88,7 @@ export default function Navbar() {
                 <path d="M12 4a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1zm0 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm7-5h1a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2zM4 11H3a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2zm13.657-5.657a1 1 0 0 1 1.414 0l.707.707a1 1 0 1 1-1.414 1.414l-.707-.707a1 1 0 0 1 0-1.414zM5.636 17.657a1 1 0 0 1 0-1.414l.707-.707a1 1 0 0 1 1.414 1.414l-.707.707a1 1 0 0 1-1.414 0zm12.021 1a1 1 0 0 1-1.414 0l-.707-.707a1 1 0 1 1 1.414-1.414l.707.707a1 1 0 0 1 0 1.414zM6.343 6.343a1 1 0 0 1 0 1.414l-.707.707A1 1 0 0 1 4.222 7.05l.707-.707a1 1 0 0 1 1.414 0z"/>
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-blue-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-brand-primary">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79z"/>
               </svg>
             )}

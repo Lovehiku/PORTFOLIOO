@@ -1,7 +1,7 @@
 // src/components/Section.jsx
 import { useEffect, useRef, useState } from "react";
 
-export default function Section({ id, title, children }) {
+export default function Section({ id, title, children, hideHeader = false }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -22,11 +22,13 @@ export default function Section({ id, title, children }) {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       }`}
     >
-      <header className="mb-8">
-        <h2 className="section-title">
-          {title}
-        </h2>
-      </header>
+      {!hideHeader && (
+        <header className="mb-8">
+          <h2 className="section-title">
+            {title}
+          </h2>
+        </header>
+      )}
 
       <div className="space-y-6">{children}</div>
     </section>

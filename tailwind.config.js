@@ -9,7 +9,7 @@ export default {
       },
       colors: {
         brand: {
-          primary: "#2563eb",
+          primary: "#34d399",
           secondary: "#0f172a",
           accent: "#7c3aed",
         },

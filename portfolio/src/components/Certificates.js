@@ -3,31 +3,33 @@ import { motion } from 'framer-motion';
 import { Award, Image as ImageIcon } from 'lucide-react';
 
 export default function Certificates() {
+  const baseUrl = process.env.PUBLIC_URL || '';
   const certificates = [
+      {
+      title: "Hackathon third place Winner",
+      issuer: "Elida 16 day activism Hackathon",
+      year: "2025",
+      placeholder: `${baseUrl}/Elida.jpg`
+    },
     {
       title: "Flutter Development Bootcamp",
       issuer: "NEJM",
       year: "2025",
-      placeholder: "/images/programming.png"
+      placeholder: `${baseUrl}/flutter.jpg`
     },
     {
       title: "React Developer Certification",
       issuer: "HUCIS",
       year: "2024",
-      placeholder: "/images/jimma1st.png"
+      placeholder: `${baseUrl}/React.jpg`
     },
     {
       title: "Packet Tracer Networking",
       issuer: "CISCO",
       year: "2024",
-      placeholder: "/images/kotlin.png"
+      placeholder: `${baseUrl}/cisco.jpg`
     },
-    {
-      title: "Hackathon third place Winner",
-      issuer: "Elida 16 day activism Hackathon",
-      year: "2025",
-      placeholder: "/images/jimma2nd.png"
-    },
+  
   ];
 
   return (

@@ -45,12 +45,10 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-amber-800 via-amber-700 to-purple-900">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Circular accent - top left gold */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
-        {/* Circular accent - top right purple */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
       </div>
 
@@ -67,8 +65,8 @@ export default function Hero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <div className="w-32 h-32 mx-auto rounded-full bg-yellow-400 p-2 border-4 border-yellow-400">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-5xl font-bold text-yellow-400">
+            <div className="w-32 h-32 mx-auto rounded-full bg-white p-2 border-4 border-white">
+              <div className="w-full h-full rounded-full bg-purple-900 flex items-center justify-center text-5xl font-bold text-white">
                 HO
               </div>
             </div>
@@ -78,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-amber-300 font-medium tracking-widest uppercase text-sm mb-4"
+            className="text-white/80 font-medium tracking-widest uppercase text-sm mb-4"
           >
             2026
           </motion.p>
@@ -96,7 +94,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-8 text-purple-200"
+            className="text-4xl md:text-5xl font-bold mb-8 text-white"
           >
             Hikma Oumer
           </motion.h2>
@@ -127,7 +125,7 @@ export default function Hero() {
             <Button
               onClick={handleDownloadCV}
               size="lg"
-              className="bg-amber-800 hover:bg-amber-900 text-white font-semibold px-8 rounded-lg shadow-md transition-all"
+              className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 rounded-lg shadow-md transition-all"
               disabled={downloading}
             >
               {downloading ? (
@@ -154,7 +152,7 @@ export default function Hero() {
               onClick={() => scrollToSection('about')}
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="text-white hover:text-yellow-400 transition-colors"
+              className="text-white hover:text-white/80 transition-colors"
             >
               <ArrowDown className="w-8 h-8" />
             </motion.button>

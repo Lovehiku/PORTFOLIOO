@@ -31,10 +31,9 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-24 bg-gray-50 relative overflow-hidden">
+    <section id="certificates" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-t border-gray-200">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -42,8 +41,9 @@ export default function Certificates() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-center mb-4 text-purple-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-800">
             Certificates & Achievements
           </h2>
         </motion.div>

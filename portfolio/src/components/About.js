@@ -16,10 +16,9 @@ const expertise = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-t border-gray-200 z-10">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -29,10 +28,8 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mt-4 flex items-center justify-center gap-2">
-            <span>✨</span>
-            <span>Hello!</span>
-            <span>✨</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-800">
+            Hello!
           </h2>
         </motion.div>
 
@@ -44,7 +41,7 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-amber-500/20 rounded-3xl blur-2xl" />
+              <div className="absolute -inset-4 bg-purple-500/10 rounded-3xl blur-2xl" />
               <div className="relative bg-white rounded-3xl p-8 md:p-10">
                 <p className="text-lg text-gray-800 leading-relaxed mb-6">
                   I am a fourth-year Software Engineering student at Addis Ababa University with a strong interest in backend engineering, system design, and building scalable software solutions.
@@ -121,7 +118,7 @@ export default function AboutSection() {
                 { number: "10+", label: "Technologies Used" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center p-4 rounded-2xl bg-gray-50">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-amber-600 bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold text-purple-700">
                     {stat.number}
                   </div>
                   <p className="text-gray-600 text-sm mt-1">{stat.label}</p>

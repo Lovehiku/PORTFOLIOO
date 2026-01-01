@@ -24,10 +24,9 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-amber-800 via-amber-700 to-purple-900 relative overflow-hidden">
+    <section id="projects" className="py-24 md:py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 relative overflow-hidden border-t border-purple-800">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -35,8 +34,9 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-center mb-4 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             Featured Projects
           </h2>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="relative group h-full">
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden hover:border-orange-500/50 transition-all h-full flex flex-col">
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden hover:border-white/40 transition-all h-full flex flex-col">
                   <div className="relative h-48 overflow-hidden">
                     <img 
                       src={project.image} 
@@ -79,7 +79,7 @@ export default function Projects() {
                       {project.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 bg-orange-500 text-white text-xs rounded-lg font-medium"
+                          className="px-3 py-1 bg-white/20 text-white text-xs rounded-lg font-medium"
                         >
                           {tag}
                         </span>
@@ -97,7 +97,7 @@ export default function Projects() {
                       </Button>
                       <Button
                         size="sm"
-                        className="flex-1 bg-orange-500 text-white hover:bg-orange-600"
+                        className="flex-1 bg-white/20 text-white hover:bg-white/30"
                         onClick={() => window.open("YOUR_DEPLOYED_PROJECT_URL", "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />

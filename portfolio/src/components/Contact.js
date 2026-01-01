@@ -16,7 +16,6 @@ if (state.succeeded) {
     <section id="contact" className="py-20 md:py-28 bg-gray-50 relative overflow-hidden min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
       </div>
       
       <motion.div
@@ -27,8 +26,8 @@ if (state.succeeded) {
       >
         <div className="bg-white rounded-2xl p-8 md:p-12 text-center shadow-2xl border border-gray-200">
           <div className="mb-6">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-12 h-12 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -74,13 +73,10 @@ if (state.succeeded) {
   ];
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-gray-50 relative overflow-hidden min-h-screen">
+    <section id="contact" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-t border-gray-200">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Circular accents */}
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-400/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
@@ -90,16 +86,13 @@ if (state.succeeded) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-16"
         >
-          <div className="inline-block mb-4">
-            <span className="text-purple-600 text-sm font-semibold uppercase tracking-wider">Get In Touch</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-purple-800">
+          <h2 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
             Let's Talk!
           </h2>
           <p className="text-center text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Let's create something amazing together.
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
         </motion.div>
 
@@ -127,21 +120,21 @@ if (state.succeeded) {
                   whileHover={{ scale: 1.02, y: -2 }}
                   className="block group"
                 >
-                  <div className="relative bg-white rounded-xl p-5 hover:bg-purple-50 transition-all duration-300 shadow-sm hover:shadow-lg border border-gray-200 hover:border-purple-300">
+                  <div className="relative bg-white rounded-xl p-5 hover:bg-gray-50 transition-all duration-300 shadow-sm hover:shadow-lg border border-gray-200 hover:border-gray-300">
                     <div className="flex items-center gap-4">
-                      <div className="p-3 bg-purple-100 rounded-lg flex-shrink-0 group-hover:bg-purple-200 transition-colors">
-                        <social.icon className="w-6 h-6 text-purple-700" />
+                      <div className="p-3 bg-gray-100 rounded-lg flex-shrink-0 group-hover:bg-gray-200 transition-colors">
+                        <social.icon className="w-6 h-6 text-gray-700" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-purple-700 transition-colors">
+                        <h3 className="text-base font-semibold text-gray-900 mb-1">
                           {social.label}
                         </h3>
-                        <p className="text-gray-600 text-sm truncate group-hover:text-purple-600 transition-colors">
+                        <p className="text-gray-600 text-sm truncate">
                           {social.value}
                         </p>
                       </div>
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Send className="w-5 h-5 text-purple-600" />
+                        <Send className="w-5 h-5 text-gray-600" />
                       </div>
                     </div>
                   </div>
@@ -162,7 +155,7 @@ if (state.succeeded) {
                   {/* Name Field */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Your Name <span className="text-red-500">*</span>
+                      Your Name <span className="text-gray-500">*</span>
                     </label>
                     <input
                       id="name"
@@ -178,7 +171,7 @@ if (state.succeeded) {
                   {/* Email Field */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address <span className="text-red-500">*</span>
+                      Email Address <span className="text-gray-500">*</span>
                     </label>
                     <input
                       id="email"
@@ -194,7 +187,7 @@ if (state.succeeded) {
                   {/* Message Field */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message <span className="text-red-500">*</span>
+                      Message <span className="text-gray-500">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -209,8 +202,8 @@ if (state.succeeded) {
 
                   {/* Error Message */}
                   {state.errors && state.errors.length > 0 && (
-                    <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-                      <p className="text-red-700 text-sm font-medium">
+                    <div className="p-4 bg-gray-100 border-l-4 border-gray-400 rounded-lg">
+                      <p className="text-gray-700 text-sm font-medium">
                         Please check the form and try again.
                       </p>
                     </div>
@@ -220,7 +213,7 @@ if (state.succeeded) {
                   <button
                     type="submit"
                     disabled={state.submitting}
-                    className="w-full py-4 px-6 bg-gradient-to-r from-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-4 px-6 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
                   >
                     {state.submitting ? (
                       <span className="flex items-center justify-center">

@@ -33,10 +33,9 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-amber-800 via-amber-700 to-purple-900 relative overflow-hidden">
+    <section id="skills" className="py-24 md:py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 relative overflow-hidden border-t border-purple-800">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -44,14 +43,10 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-center mb-4 text-white flex items-center justify-center gap-2">
-            <span>⭐</span>
-            <span>Expertise</span>
-          </h2>
-          <h2 className="text-5xl font-bold text-center mb-4 text-white flex items-center justify-center gap-2">
-            <span>⭐</span>
-            <span>Software Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Expertise & Software Skills
           </h2>
         </motion.div>
 
@@ -65,7 +60,7 @@ export default function Skills() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="relative group h-full">
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 hover:border-orange-500/50 transition-all h-full">
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 hover:border-white/40 transition-all h-full">
                   <div className="p-4 bg-white/20 rounded-xl w-fit mb-6">
                     <category.icon className="w-8 h-8 text-white" />
                   </div>
@@ -78,7 +73,7 @@ export default function Skills() {
                     {category.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-3 py-1.5 bg-orange-500 text-white text-sm rounded-lg font-medium"
+                        className="px-3 py-1.5 bg-white/20 text-white text-sm rounded-lg font-medium"
                       >
                         {skill}
                       </span>

@@ -45,7 +45,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent cursor-pointer"
+              className="text-2xl font-bold text-white cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               HO
@@ -57,7 +57,7 @@ export default function Navigation() {
                 <motion.button
                   key={index}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-4 py-2 text-white hover:text-yellow-400 transition-colors rounded-lg hover:bg-purple-800/50"
+                  className="px-4 py-2 text-white hover:text-white/80 transition-colors rounded-lg hover:bg-purple-800/50"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -92,7 +92,7 @@ export default function Navigation() {
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(item.href)}
-                className="text-2xl text-white hover:text-yellow-400 transition-colors"
+                className="text-2xl text-white hover:text-white/80 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}

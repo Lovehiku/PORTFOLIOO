@@ -65,11 +65,11 @@ export default function Hero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <div className="w-32 h-32 mx-auto rounded-full bg-white p-2 border-4 border-white">
+            {/* <div className="w-32 h-32 mx-auto rounded-full bg-white p-2 border-4 border-white">
               <div className="w-full h-full rounded-full bg-purple-900 flex items-center justify-center text-5xl font-bold text-white">
                 HO
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.p
@@ -117,7 +117,7 @@ export default function Hero() {
             <Button
               onClick={() => scrollToSection('contact')}
               size="lg"
-              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-8 rounded-lg"
+              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
               Contact Me
             </Button>
@@ -125,7 +125,7 @@ export default function Hero() {
             <Button
               onClick={handleDownloadCV}
               size="lg"
-              className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 rounded-lg shadow-md transition-all"
+              className="bg-white text-purple-700 hover:bg-gray-100 font-semibold px-8 py-3 rounded-lg border border-gray-300 shadow-md hover:shadow-lg transition-all duration-300"
               disabled={downloading}
             >
               {downloading ? (

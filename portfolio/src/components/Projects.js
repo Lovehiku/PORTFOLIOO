@@ -90,14 +90,14 @@ export default function Projects() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1 border-white/30 text-white hover:border-white/50 hover:bg-white/10"
+                        className="flex-1 border border-white/30 text-white hover:border-white/50 hover:bg-white/10 rounded-lg px-4 py-2 transition-all duration-300"
                       >
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </Button>
                       <Button
                         size="sm"
-                        className="flex-1 bg-white/20 text-white hover:bg-white/30"
+                        className="flex-1 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300"
                         onClick={() => window.open("YOUR_DEPLOYED_PROJECT_URL", "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />

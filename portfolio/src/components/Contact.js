@@ -213,7 +213,7 @@ if (state.succeeded) {
                   <button
                     type="submit"
                     disabled={state.submitting}
-                    className="w-full py-4 px-6 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-3 px-6 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
                   >
                     {state.submitting ? (
                       <span className="flex items-center justify-center">

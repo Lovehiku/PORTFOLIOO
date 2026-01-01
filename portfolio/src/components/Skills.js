@@ -33,7 +33,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 md:py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 relative overflow-hidden border-t border-purple-800">
+    <section id="skills" className="py-24 md:py-32 bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 relative overflow-hidden border-t border-purple-800 z-20">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
       

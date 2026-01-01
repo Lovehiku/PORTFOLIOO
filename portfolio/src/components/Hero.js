@@ -45,7 +45,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900 z-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />

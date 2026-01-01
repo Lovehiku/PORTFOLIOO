@@ -31,7 +31,7 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-t border-gray-200">
+    <section id="certificates" className="py-24 md:py-32 bg-gray-50 relative overflow-hidden border-t border-gray-200 z-50">
       {/* Circular accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
       

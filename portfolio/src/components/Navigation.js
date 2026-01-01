@@ -35,7 +35,7 @@ export default function Navigation() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           isScrolled 
             ? 'bg-purple-900/95 backdrop-blur-lg border-b border-purple-800 shadow-lg' 
             : 'bg-transparent'
@@ -85,7 +85,7 @@ export default function Navigation() {
           initial={{ opacity: 0, x: '100%' }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: '100%' }}
-          className="fixed inset-0 z-40 md:hidden bg-purple-900/98 backdrop-blur-lg"
+          className="fixed inset-0 z-[100] md:hidden bg-purple-900/98 backdrop-blur-lg"
         >
           <div className="flex flex-col items-center justify-center h-full gap-6">
             {navItems.map((item, index) => (

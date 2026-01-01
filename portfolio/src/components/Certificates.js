@@ -31,20 +31,21 @@ export default function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-6">
+    <section id="certificates" className="py-24 bg-gray-50 relative overflow-hidden">
+      {/* Circular accents */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Certificates & Achievements
-            </span>
+          <h2 className="text-5xl font-bold text-center mb-4 text-purple-800">
+            Certificates & Achievements
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-16 rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -65,18 +66,17 @@ export default function Certificates() {
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && window.open(cert.placeholder, '_blank')}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all h-full">
-                  <div className="relative h-64 overflow-hidden bg-slate-800">
+                <div className="relative bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all h-full">
+                  <div className="relative h-64 overflow-hidden bg-gray-100">
                     <img 
                       src={cert.placeholder} 
                       alt={cert.title}
-                      className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity"
+                      className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="p-4 bg-cyan-500/10 rounded-full inline-block mb-4">
-                          <ImageIcon className="w-12 h-12 text-cyan-400" />
+                        <div className="p-4 bg-purple-700/10 rounded-full inline-block mb-4">
+                          <ImageIcon className="w-12 h-12 text-purple-700" />
                         </div>
                       </div>
                     </div>
@@ -84,24 +84,24 @@ export default function Certificates() {
                   
                   <div className="p-6">
                     <div className="flex items-start gap-3 mb-3">
-                      <div className="p-2 bg-cyan-500/10 rounded-lg mt-1">
-                        <Award className="w-5 h-5 text-cyan-400" />
+                      <div className="p-2 bg-purple-700/10 rounded-lg mt-1">
+                        <Award className="w-5 h-5 text-purple-700" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-lg font-bold text-slate-200 mb-1">
+                        <h3 className="text-lg font-bold text-gray-900 mb-1">
                           {cert.title}
                         </h3>
-                        <p className="text-slate-400 text-sm">
+                        <p className="text-gray-600 text-sm">
                           {cert.issuer}
                         </p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between pt-4 border-t border-slate-700">
-                      <span className="text-cyan-400 text-sm font-semibold">
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                      <span className="text-purple-700 text-sm font-semibold">
                         {cert.year}
                       </span>
-                      <span className="text-slate-500 text-sm">
+                      <span className="text-gray-500 text-sm">
                         Click to view
                       </span>
                     </div>

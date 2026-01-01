@@ -37,7 +37,7 @@ export default function Navigation() {
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-slate-900/95 backdrop-blur-lg border-b border-slate-800 shadow-lg' 
+            ? 'bg-purple-900/95 backdrop-blur-lg border-b border-purple-800 shadow-lg' 
             : 'bg-transparent'
         }`}
       >
@@ -45,7 +45,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer"
+              className="text-2xl font-bold bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               HO
@@ -57,7 +57,7 @@ export default function Navigation() {
                 <motion.button
                   key={index}
                   onClick={() => scrollToSection(item.href)}
-                  className="px-4 py-2 text-slate-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-slate-800/50"
+                  className="px-4 py-2 text-white hover:text-yellow-400 transition-colors rounded-lg hover:bg-purple-800/50"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -85,14 +85,14 @@ export default function Navigation() {
           initial={{ opacity: 0, x: '100%' }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: '100%' }}
-          className="fixed inset-0 z-40 md:hidden bg-slate-900/98 backdrop-blur-lg"
+          className="fixed inset-0 z-40 md:hidden bg-purple-900/98 backdrop-blur-lg"
         >
           <div className="flex flex-col items-center justify-center h-full gap-6">
             {navItems.map((item, index) => (
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(item.href)}
-                className="text-2xl text-slate-300 hover:text-cyan-400 transition-colors"
+                className="text-2xl text-white hover:text-yellow-400 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}

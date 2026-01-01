@@ -33,20 +33,26 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-24 bg-gradient-to-b from-amber-800 via-amber-700 to-purple-900 relative overflow-hidden">
+      {/* Circular accents */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Skills & Expertise
-            </span>
+          <h2 className="text-5xl font-bold text-center mb-4 text-white flex items-center justify-center gap-2">
+            <span>⭐</span>
+            <span>Expertise</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-16 rounded-full" />
+          <h2 className="text-5xl font-bold text-center mb-4 text-white flex items-center justify-center gap-2">
+            <span>⭐</span>
+            <span>Software Skills</span>
+          </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -59,13 +65,12 @@ export default function Skills() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="relative group h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all h-full">
-                  <div className="p-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl w-fit mb-6">
-                    <category.icon className="w-8 h-8 text-cyan-400" />
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-8 hover:border-orange-500/50 transition-all h-full">
+                  <div className="p-4 bg-white/20 rounded-xl w-fit mb-6">
+                    <category.icon className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-slate-200 mb-4">
+                  <h3 className="text-xl font-bold text-white mb-4">
                     {category.title}
                   </h3>
                   
@@ -73,7 +78,7 @@ export default function Skills() {
                     {category.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-3 py-1.5 bg-slate-700/50 text-slate-300 text-sm rounded-lg border border-slate-600 hover:border-cyan-500/50 hover:text-cyan-400 transition-all"
+                        className="px-3 py-1.5 bg-orange-500 text-white text-sm rounded-lg font-medium"
                       >
                         {skill}
                       </span>

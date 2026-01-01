@@ -10,33 +10,51 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleDownloadCV = () => {
+  const handleDownloadCV = async () => {
     setDownloading(true);
     
-    const link = document.createElement('a');
-    link.href = 'images/Hiku_Oumer_CV.pdf';
-    link.download = 'Hiku_Oumer_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Update this filename to match your CV file name in /public/images/
+    const cvFileName = 'Hikma_Oumer_CV.pdf'; // Change this to your actual CV filename
     
-    setTimeout(() => setDownloading(false), 1000);
+    try {
+      // Try to fetch the CV file
+      const response = await fetch(`/images/${cvFileName}`);
+      if (!response.ok) {
+        throw new Error('CV file not found');
+      }
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Hikma_Oumer_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+      // Fallback: try direct link
+      const link = document.createElement('a');
+      link.href = `/images/${cvFileName}`;
+      link.download = 'Hikma_Oumer_CV.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      setTimeout(() => setDownloading(false), 1000);
+    }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-amber-800 via-amber-700 to-purple-900">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.5, 0.3, 0.5] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
+        {/* Circular accent - top left gold */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl" />
+        {/* Circular accent - top right purple */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -52,41 +70,47 @@ export default function Hero() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-5xl font-bold text-cyan-400">
+            <div className="w-32 h-32 mx-auto rounded-full bg-yellow-400 p-2 border-4 border-yellow-400">
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-5xl font-bold text-yellow-400">
                 HO
               </div>
             </div>
           </motion.div>
 
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-amber-300 font-medium tracking-widest uppercase text-sm mb-4"
+          >
+            2026
+          </motion.p>
+
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-6xl md:text-7xl font-bold mb-4"
+            className="text-6xl md:text-7xl font-bold mb-4 text-white"
           >
-            <span className="text-slate-300">Hello, I’m </span>
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Hikma Oumer
-            </span>
+            Portfolio & Resume
           </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-4xl md:text-5xl font-bold mb-8 text-purple-200"
+          >
+            Hikma Oumer
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto"
           >
             Software Engineering Student · Backend-Focused Developer
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-lg text-slate-500 mb-12 max-w-2xl mx-auto"
-          >
-            I build reliable, ethical, and scalable software systems with a strong interest in backend engineering, system design, and distributed systems.
           </motion.p>
 
           <motion.div
@@ -98,7 +122,7 @@ export default function Hero() {
             <Button
               onClick={() => scrollToSection('contact')}
               size="lg"
-              className="bg-cyan-500 hover:bg-cyan-600/15 text-slate-900 font-semibold px-8"
+              className="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-8 rounded-lg"
             >
               Contact Me
             </Button>
@@ -106,8 +130,7 @@ export default function Hero() {
             <Button
               onClick={handleDownloadCV}
               size="lg"
-              variant="outline"
-              className="border-cyan-500 text-cyan-400 hover:bg-amber-500 px-8"
+              className="bg-amber-800 hover:bg-amber-900 text-white font-semibold px-8 rounded-lg shadow-md transition-all"
               disabled={downloading}
             >
               {downloading ? (
@@ -117,7 +140,7 @@ export default function Hero() {
                 </>
               ) : (
                 <>
-                  <Download className="w-5 h-5 mr-2 text-amber-300" />
+                  <Download className="w-5 h-5 mr-2" />
                   Download CV
                 </>
               )}
@@ -134,7 +157,7 @@ export default function Hero() {
               onClick={() => scrollToSection('about')}
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="text-cyan-400 hover:text-cyan-300 transition-colors"
+              className="text-white hover:text-yellow-400 transition-colors"
             >
               <ArrowDown className="w-8 h-8" />
             </motion.button>

@@ -14,20 +14,23 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-24 bg-slate-950">
-      <div className="container mx-auto px-6">
+    <section id="education" className="py-24 bg-gray-50 relative overflow-hidden">
+      {/* Circular accents */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold text-center mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Education
-            </span>
+          <h2 className="text-5xl font-bold text-center mb-4 text-purple-800 flex items-center justify-center gap-2">
+            <span>✨</span>
+            <span>Education</span>
+            <span>✨</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-16 rounded-full" />
         </motion.div>
 
         <div className="max-w-4xl mx-auto space-y-8">
@@ -40,24 +43,23 @@ export default function Education() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all">
+                <div className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:border-purple-500/50 transition-all">
                   <div className="flex items-start gap-6">
-                    <div className="p-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-xl">
-                      <GraduationCap className="w-8 h-8 text-cyan-400" />
+                    <div className="p-4 bg-purple-700/10 rounded-xl">
+                      <GraduationCap className="w-8 h-8 text-purple-700" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-slate-200 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         {edu.degree}
                       </h3>
-                      <p className="text-cyan-400 font-semibold mb-2">
+                      <p className="text-purple-700 font-semibold mb-2">
                         {edu.specialization}
                       </p>
-                      <p className="text-slate-400 mb-4 flex items-center gap-2">
+                      <p className="text-gray-600 mb-4 flex items-center gap-2">
                         <Award className="w-4 h-4" />
                         {edu.institution}
                       </p>
-                      <p className="text-slate-500 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed">
                         {edu.description}
                       </p>
                     </div>

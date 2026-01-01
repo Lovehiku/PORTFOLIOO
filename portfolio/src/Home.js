@@ -13,7 +13,7 @@ import Projects from './components/Projects';
 
 export default function Home() {
   return (
-    <div className="bg-slate-950 min-h-screen">
+    <div className="min-h-screen">
       <Navigation />
       <Hero />
       <About />

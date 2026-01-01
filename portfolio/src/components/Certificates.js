@@ -26,7 +26,7 @@ export default function Certificates() {
     {
       title: "Packet Tracer Networking",
       issuer: "CISCO",
-      year: "2024",
+      year: "2023",
       placeholder: `${baseUrl}/cisco.jpg`
     },
   

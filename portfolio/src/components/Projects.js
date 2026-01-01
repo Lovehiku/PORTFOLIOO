@@ -9,18 +9,28 @@ export default function Projects() {
     title: "SafeNet",
     description: "SafeNet is a digital safety platform designed to protect women and girls from online harm by detecting, preventing, and responding to Technology-Facilitated Gender-Based Violence (TFGBV).",
     tags: ["React ,Node.js", "Express", "MongoDB", ""],
-     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+    image: "/safenet.jpg",
+     codeUrl: "https://github.com/Lovehiku/SafeNet",
+     demoUrl: "https://drive.google.com/file/d/1K2E0qjJGWfyaEdv9yYa_b0ouQoriUfVb/view?usp=drive_link",
   },
   {
     title: "Guardian App",
     description: "A Flutter application for managing medical information and emergency contacts.",
     tags: ["Dart", "Node.js", "MongoDB", "Swift"],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80"},
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
+    codeUrl: "https://github.com/your-username/guardian-app",
+    demoUrl: "https://your-guardian-demo.com",
+    videoUrl: "https://youtu.be/your-guardian-video"
+  },
   {
-    title: "Data Analytics Dashboard",
+    title: "Restorant Managnment system ",
     description: "Interactive dashboard for visualizing business metrics, generating reports, and predictive analytics using machine learning.",
     tags: ["Python", "React", "TensorFlow", "D3.js"],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"}
+    image: "/Restorant.jpg",
+    codeUrl: "https://github.com/your-username/data-analytics-dashboard",
+    demoUrl: "https://your-dashboard-demo.com",
+    videoUrl: "https://youtu.be/your-dashboard-video"
+  }
   ];
 
   return (
@@ -91,6 +101,7 @@ export default function Projects() {
                         variant="outline"
                         size="sm"
                         className="flex-1 border border-white/30 text-white hover:border-white/50 hover:bg-white/10 rounded-lg px-4 py-2 transition-all duration-300"
+                        onClick={() => window.open(project.codeUrl, "_blank")}
                       >
                         <Github className="w-4 h-4 mr-2" />
                         Code
@@ -98,11 +109,12 @@ export default function Projects() {
                       <Button
                         size="sm"
                         className="flex-1 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg px-4 py-2 shadow-md hover:shadow-lg transition-all duration-300"
-                        onClick={() => window.open("YOUR_DEPLOYED_PROJECT_URL", "_blank")}
+                        onClick={() => window.open(project.demoUrl, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </Button>
+                      
                     </div>
                   </div>
                 </div>

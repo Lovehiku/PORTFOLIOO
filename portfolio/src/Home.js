@@ -13,7 +13,7 @@ import Projects from './components/Projects';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Navigation />
       <Hero />
       <About />

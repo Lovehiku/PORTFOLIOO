@@ -13,12 +13,9 @@ export default function Hero() {
   const handleDownloadCV = async () => {
     setDownloading(true);
     
-    // Update this filename to match your CV file name in /public/images/
-    const cvFileName = 'Hikma_Oumer_CV.pdf'; // Change this to your actual CV filename
-    
     try {
-      // Try to fetch the CV file
-      const response = await fetch(`/images/${cvFileName}`);
+      // Fetch the CV file from public folder
+      const response = await fetch('/CV.pdf');
       if (!response.ok) {
         throw new Error('CV file not found');
       }
@@ -36,7 +33,7 @@ export default function Hero() {
       console.error('Error downloading CV:', error);
       // Fallback: try direct link
       const link = document.createElement('a');
-      link.href = `/images/${cvFileName}`;
+      link.href = '/CV.pdf';
       link.download = 'Hikma_Oumer_CV.pdf';
       link.target = '_blank';
       document.body.appendChild(link);

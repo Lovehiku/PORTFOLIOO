@@ -16,7 +16,7 @@ export default function Projects() {
   {
     title: "Guardian App",
     description: "A Flutter application for managing medical information and emergency contacts.",
-    tags: ["Dart", "Node.js", "MongoDB", "Swift"],
+    tags: ["Dart", "Flutter","Node js", "MongoDB", "Swift" ],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80",
     codeUrl: "https://github.com/your-username/guardian-app",
     demoUrl: "https://your-guardian-demo.com",

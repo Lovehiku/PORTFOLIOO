@@ -47,6 +47,15 @@ export default function Projects() {
     codeUrl: "https://github.com/Lovehiku/SaveHeaven-Admin-dash-board",
     demoUrl: "https://saveheaven-admin-dash-board.onrender.com",
   }
+  ,
+  {
+    title: "Nebula Notes ",
+    description: "A full-stack Note Taking Application built for learning purposes using MERN stack .The system allows users to securely create, read, update, and delete personal notes after authentication..",
+    tags: ["Node js", "Express", "TypeScript", "MongoDB" ,"Tailwind CSS"],
+    image: "/Nebula.jpg",
+    codeUrl: "https://github.com/Lovehiku/Nebula-Notes",
+    demoUrl: "https://customer-kappa-opal.vercel.app",
+  }
   ];
 
   return (
